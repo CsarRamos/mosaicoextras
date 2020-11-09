@@ -13,7 +13,7 @@ The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
 ## New plugin
 
-* Add new tool in mosaico toolbar to create mailto with cc, content and body
+* Mailto: Add new tool in mosaico toolbar to create mailto with cc, content and body. (Add plugin "mailto" with mosaico toolbar configuration)
 
 ## New customization
 
