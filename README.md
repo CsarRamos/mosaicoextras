@@ -12,12 +12,8 @@ The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
 ## Mosaico toolbar configuration
 
-* This extension integrates GUI Toolbar Configurator for Mosaico in CiviCRM. Created by: [Ginkgo Street Labs](https://github.com/ginkgostreet/com.ginkgostreet.mosaicotoolbarconfig)
+* This extension integrates the [Toolbar Configurator for Mosaico](https://github.com/ginkgostreet/com.ginkgostreet.mosaicotoolbarconfig) in CiviCRM.
 
 ## New plugin
 
-* Mailto: Add new tool in mosaico toolbar to create mailto with cc, content and body. (Add plugin "mailto" with mosaico toolbar configuration)
-
-## New customization
-
-* Customize the color palette for the mosaico editor
+* Mailto: Added new tool in mosaico toolbar to create mailto with cc, content and body.

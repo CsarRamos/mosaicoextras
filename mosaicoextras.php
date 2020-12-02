@@ -186,10 +186,6 @@ function mosaicoextras_civicrm_buildForm($formName, &$form) {
       'toolbar' => Civi::settings()->get('mosaico_extras_toolbar'),
     ]);
 
-    CRM_Core_Resources::singleton()->addVars('mosaico', [
-      'mosaico_extras_textcolor_map' => unserialize(Civi::settings()->get('mosaico_extras_textcolor_map')) ?: '',
-    ]);
-
     CRM_Core_Region::instance('page-body')->add([
       'template' => __DIR__ . '/templates/CRM/Mosaicoextras/Settings.tpl',
     ]);
@@ -208,8 +204,7 @@ function mosaicoextras_civicrm_buildForm($formName, &$form) {
 function mosaicoextras_civicrm_postProcess($formName, &$form) {
   if ($formName == 'CRM_Mosaico_Form_MosaicoAdmin') {
     Civi::settings()->set('mosaico_extras_plugins', $_POST['mosaico_extras_plugins']);
-    Civi::settings()->set('mosaico_extras_plugins', $_POST['mosaico_extras_toolbar']);
-    Civi::settings()->set('mosaico_extras_textcolor_map', serialize($_POST['mosaico_extras_textcolor_map']));
+    Civi::settings()->set('mosaico_extras_toolbar', $_POST['mosaico_extras_toolbar']);
   }
 }
 
@@ -229,17 +224,4 @@ function mosaicoextras_civicrm_mosaicoConfig(&$config) {
 
   // Add mailto plugin
   $config['tinymceConfig']['external_plugins']['mailto'] = $res->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', 1);
-
-  // Get textcolor configuration from Mosaico Settings
-  $colors = unserialize(Civi::settings()->get('mosaico_extras_textcolor_map'));
-  if (isset($colors) && !empty($colors)) {
-    foreach (explode(",", $colors) as $color) {
-      $color = explode(":", $color);
-      if (!empty($color[0]) && !empty($color[1])) {
-        // Set textcolor configuration
-        $config["tinymceConfigFull"]["textcolor_map"][] = $color[1];
-        $config["tinymceConfigFull"]["textcolor_map"][] = $color[0];
-      }
-    }
-  }
 }
