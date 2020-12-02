@@ -1,9 +1,8 @@
 <?php
 
 require_once 'mosaicoextras.civix.php';
-// phpcs:disable
+
 use CRM_Mosaicoextras_ExtensionUtil as E;
-// phpcs:enable
 
 /**
  * Implements hook_civicrm_config().
@@ -182,13 +181,18 @@ function mosaicoextras_civicrm_themes(&$themes) {
  */
 function mosaicoextras_civicrm_buildForm($formName, &$form) {
   if ($formName == 'CRM_Mosaico_Form_MosaicoAdmin') {
-    CRM_Core_Resources::singleton()->addVars('mosaico', array(
-      'mosaico_extras_textcolor_map' => unserialize(Civi::settings()->get('mosaico_extras_textcolor_map')) ?: '',
-    ));
+    CRM_Core_Resources::singleton()->addVars('mosaico', [
+      'plugins' => Civi::settings()->get('mosaico_extras_plugins'),
+      'toolbar' => Civi::settings()->get('mosaico_extras_toolbar'),
+    ]);
 
-    CRM_Core_Region::instance('page-body')->add(array(
+    CRM_Core_Resources::singleton()->addVars('mosaico', [
+      'mosaico_extras_textcolor_map' => unserialize(Civi::settings()->get('mosaico_extras_textcolor_map')) ?: '',
+    ]);
+
+    CRM_Core_Region::instance('page-body')->add([
       'template' => __DIR__ . '/templates/CRM/Mosaicoextras/Settings.tpl',
-    ));
+    ]);
   }
 }
 
@@ -203,6 +207,8 @@ function mosaicoextras_civicrm_buildForm($formName, &$form) {
  */
 function mosaicoextras_civicrm_postProcess($formName, &$form) {
   if ($formName == 'CRM_Mosaico_Form_MosaicoAdmin') {
+    Civi::settings()->set('mosaico_extras_plugins', $_POST['mosaico_extras_plugins']);
+    Civi::settings()->set('mosaico_extras_plugins', $_POST['mosaico_extras_toolbar']);
     Civi::settings()->set('mosaico_extras_textcolor_map', serialize($_POST['mosaico_extras_textcolor_map']));
   }
 }
@@ -217,6 +223,9 @@ function mosaicoextras_civicrm_postProcess($formName, &$form) {
  */
 function mosaicoextras_civicrm_mosaicoConfig(&$config) {
   $res = CRM_Core_Resources::singleton();
+
+  $config['tinymceConfigFull']['plugins'] = [Civi::settings()->get('mosaico_extras_plugins')];
+  $config['tinymceConfigFull']['toolbar1'] = Civi::settings()->get('mosaico_extras_toolbar');
 
   // Add mailto plugin
   $config['tinymceConfig']['external_plugins']['mailto'] = $res->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', 1);
