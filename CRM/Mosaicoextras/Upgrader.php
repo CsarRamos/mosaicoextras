@@ -14,7 +14,7 @@ class CRM_Mosaicoextras_Upgrader extends CRM_Mosaicoextras_Upgrader_Base {
         'value' => (Civi::settings()->get('mosaico_extras_plugins')) ?: Civi::settings()->get('mosaico_plugins'),
       ],
       'mosaico_extras_toolbar' => [
-        'default' => 'bold italic forecolor backcolor hr styleselect removeformat | civicrmtoken | link unlink mailto | pastetext code',
+        'default' => 'bold italic forecolor backcolor hr styleselect removeformat | civicrmtoken | link unlink | pastetext code',
         'value' => (Civi::settings()->get('mosaico_extras_toolbar')) ?: Civi::settings()->get('mosaico_toolbar'),
       ],
     ];
