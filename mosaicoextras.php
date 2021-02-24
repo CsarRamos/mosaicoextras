@@ -193,7 +193,7 @@ function mosaicoextras_civicrm_buildForm($formName, &$form) {
 }
 
 /**
- * implements hook_civicrm_postProcess().
+ * Implements hook_civicrm_postProcess().
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postProcess/
  *
@@ -209,7 +209,7 @@ function mosaicoextras_civicrm_postProcess($formName, &$form) {
 }
 
 /**
- * implements hook_civicrm_mosaicoConfig().
+ * Implements hook_civicrm_mosaicoConfig().
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postProcess/
  *
@@ -224,4 +224,21 @@ function mosaicoextras_civicrm_mosaicoConfig(&$config) {
 
   // Add mailto plugin
   $config['tinymceConfig']['external_plugins']['mailto'] = $res->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', 1);
+}
+
+/**
+ * Implements hook_civicrm_mosaicoBaseTemplates().
+ *
+ * @link https://docs.civicrm.org/mosaico/en/latest/api/
+ *
+ * @param object $templates
+ * @return void
+ */
+function mosaicoextras_civicrm_mosaicoBaseTemplates(&$templates) {
+  $templates['mosaicoextras'] = [
+    'name' => 'mosaicoextras',
+    'title' => 'MosaicoExtras',
+    'path' => E::url('templates/MosaicoExtras/template-mosaicoextras.html'),
+    'thumbnail' => E::url('templates/MosaicoExtras/edres/_full.png'),
+  ];
 }
