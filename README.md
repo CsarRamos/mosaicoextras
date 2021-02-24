@@ -17,3 +17,9 @@ The extension is licensed under [AGPL-3.0](LICENSE.txt).
 ## New plugin
 
 * Mailto: Added new tool in mosaico toolbar to create mailto with cc, content and body. (Disabled by default)
+
+## New base template
+
+#### Features:
+* Tool that allows you to adjust button borders, colour, size or type.
+* New triple article block centred with images.
