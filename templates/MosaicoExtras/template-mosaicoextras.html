@@ -350,6 +350,16 @@
         extend: image
       }
 
+      middleLeftImage {
+        label: Central Left Image;
+        extend: image
+      }
+
+      middleRightImage {
+        label: Central Right Image;
+        extend: image
+      }
+
       middleLongText {
         label: Central Text;
         extend: text
@@ -472,6 +482,10 @@
         label: YouTube
       }
 
+      socialBlock soundVisible {
+        label: Soundcloud
+      }
+
       socialBlock fbUrl {
         label: Facebook Link
       }
@@ -508,9 +522,13 @@
         label: YouTube Link
       }
 
+      socialBlock soundUrl {
+        label: Soundcloud Link
+      }
+
       socialBlock {
         label: Social Block;
-        properties: socialIconType=colors fbVisible=true fbUrl twVisible=true twUrl ggVisible=true ggUrl webVisible=false webUrl inVisible=false inUrl flVisible=false flUrl viVisible=false viUrl instVisible=false instUrl youVisible=false youUrl longTextStyle longText backgroundColor;
+        properties: socialIconType=colors fbVisible=true fbUrl twVisible=true twUrl ggVisible=true ggUrl webVisible=false webUrl inVisible=false inUrl flVisible=false flUrl viVisible=false viUrl instVisible=false instUrl youVisible=false youUrl soundVisible=false soundUrl longTextStyle longText backgroundColor;
         variant: socialIconType;
         theme: frameTheme
       }
@@ -621,6 +639,16 @@
         label: Three Image Gallery Block;
         properties: gutterVisible=false;
         variant: gutterVisible;
+        theme: contentTheme
+      }
+
+      fourImageBlock longTextStyle {
+        label: Alternative Text;
+        help: Some Email Clients will show this text if automatical download of images is disabled;
+      }
+
+      fourImageBlock {
+        label: Four Image Gallery Block;
         theme: contentTheme
       }
 
@@ -1005,6 +1033,15 @@
       text-decoration: underline;
     }
 
+    [data-ko-block=fourImageBlock] a,
+    [data-ko-block=fourImageBlock] a:link,
+    [data-ko-block=fourImageBlock] a:visited,
+    [data-ko-block=fourImageBlock] a:hover {
+      color: #3f3f3f;
+      -ko-color: @longTextStyle.linksColor;
+      text-decoration: underline;
+    }
+
     [data-ko-block=imageBlock] a,
     [data-ko-block=imageBlock] a:link,
     [data-ko-block=imageBlock] a:visited,
@@ -1259,7 +1296,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                 -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                 -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                 -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1394,7 +1431,7 @@
                               <td width="auto" valign="middle" bgcolor="#bfbfbf"
                                 align="center" height="26"
                                 style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                       -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                       -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                       -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1554,7 +1591,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                 -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                 -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                 -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1625,7 +1662,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                 -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                 -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                 -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1696,7 +1733,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                 -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                 -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                 -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1796,7 +1833,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                       -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                       -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                       -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1867,7 +1904,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                       -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                       -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                       -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -1938,7 +1975,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                      padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                       -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                       -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                       -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -2038,7 +2075,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                  padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                  padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                   -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                   -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                   -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -2108,7 +2145,7 @@
                                 <td width="auto" valign="middle"
                                   bgcolor="#bfbfbf" align="center" height="26"
                                   style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
-                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                                 -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
                                 -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
                                 -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
@@ -2201,7 +2238,7 @@
                         <td width="auto" valign="middle" bgcolor="#bfbfbf"
                           align="center" height="50"
                           style="font-size:22px; font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; font-weight: normal;
-                    padding-left: 14px; padding-right: 14px; background-color: #bfbfbf; border-radius: 1px; border-style: solid; border-width: 1px; border-color: #3f3f3f;
+                    padding-left: 14px; padding-right: 14px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
                     -ko-attr-bgcolor: @bigButtonStyle.buttonColor; -ko-background-color: @bigButtonStyle.buttonColor;
                      -ko-border-radius: @[bigButtonStyle.radius]px; -ko-border-style:@[bigButtonStyle.borderStyle];
                      -ko-border-width: @[bigButtonStyle.borderWidth]px; -ko-border-color:@bigButtonStyle.borderColor;
@@ -2579,6 +2616,217 @@
       </table>
       <!-- /tripleImageBlock -->
 
+      <!--  fourImageBlock -->
+      <table class="vb-outer" width="100%" cellpadding="0" border="0"
+        cellspacing="0" bgcolor="#bfbfbf"
+        style="background-color: #bfbfbf;
+          -ko-background-color: @externalBackgroundColor; -ko-attr-bgcolor: @externalBackgroundColor"
+        data-ko-block="fourImageBlock">
+        <tr>
+          <td class="vb-outer" valign="top" align="center" style="">
+            <!--[if (gte mso 9)|(lte ie 8)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="570"><tr><td align="center" valign="top"><![endif]-->
+            <div class="oldwebkit">
+              <table width="570" class="vb-container fullwidth" cellpadding="0"
+                border="0" bgcolor="#ffffff" align="center" cellspacing="0"
+                style="width: 100%; max-width: 570px; background-color: #ffffff; -ko-background-color: @backgroundColor; -ko-attr-bgcolor: @backgroundColor;">
+                <tr>
+                  <td valign="top" align="center" class="mobile-row"
+                    style="font-size: 0">
+
+                    <!--[if (gte mso 9)|(lte ie 8)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="570"><tr><![endif]-->
+                    <!--[if (gte mso 9)|(lte ie 8)]><td align="left" valign="top" width="142"><![endif]-->
+                    <div
+                      style="display:inline-block; max-width:142px; vertical-align:top; width:100%; "
+                      class="mobile-full">
+                      <a data-ko-link="leftImage.url" href=""
+                        style="text-decoration: none;"><img
+                          data-ko-editable="leftImage.src" hspace="0"
+                          align="left" border="0" vspace="0" width="142"
+                          height="160" class="mobile-full"
+                          src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                          alt=""
+                          style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                        font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                        -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @leftImage.alt;" /></a>
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td>
+      <td align="left" valign="top" width="142">
+      <![endif]-->
+                    <div
+                      style="display:inline-block; max-width:142px; vertical-align:top; width:100%; "
+                      class="mobile-full">
+                      <a data-ko-link="middleLeftImage.url" href=""
+                        style="text-decoration: none;"><img
+                          data-ko-editable="middleLeftImage.src" hspace="0"
+                          align="center" border="0" vspace="0" width="142"
+                          height="160" class="mobile-full"
+                          src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                          alt=""
+                          style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                        font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                        -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @middleLeftImage.alt;" /></a>
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td>
+      <td align="left" valign="top" width="142">
+      <![endif]-->
+                    <div
+                      style="display:inline-block; max-width:142px; vertical-align:top; width:100%; "
+                      class="mobile-full">
+                      <a data-ko-link="middleRightImage.url" href=""
+                        style="text-decoration: none;"><img
+                          data-ko-editable="middleRightImage.src" hspace="0"
+                          align="center" border="0" vspace="0" width="142"
+                          height="160" class="mobile-full"
+                          src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                          alt=""
+                          style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                        font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                        -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @middleRightImage.alt;" /></a>
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td><![endif]-->
+                    <!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]-->
+                    <div
+                      style="display:inline-block; max-width:142px; vertical-align:top; width:100%; "
+                      class="mobile-full">
+                      <a data-ko-link="rightImage.url" href=""
+                        style="text-decoration: none;"><img
+                          data-ko-editable="rightImage.src" hspace="0"
+                          align="right" border="0" vspace="0" width="142"
+                          height="160" class="mobile-full"
+                          src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                          alt=""
+                          style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                                            font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                                            -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @rightImage.alt;" /></a>
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td><![endif]-->
+                    <!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]-->
+                  </td>
+                </tr>
+              </table>
+              <table width="570" border="0" cellpadding="1" cellspacing="9"
+                bgcolor="#ffffff" class="vb-row fullpad"
+                style="width: 100%; max-width: 570px; background-color: #ffffff; -ko-attr-bgcolor: @backgroundColor; -ko-background-color: @backgroundColor; display: none;">
+                <tr>
+                  <td align="center" valign="top" bgcolor="#ffffff"
+                    style="font-size: 0; background-color: #ffffff; -ko-attr-bgcolor: @backgroundColor; -ko-background-color: @backgroundColor">
+
+                    <!--[if (gte mso 9)|(lte ie 8)]><table align="center" border="0" cellspacing="0" cellpadding="0" width="552"><tr><![endif]-->
+                    <!--[if (gte mso 9)|(lte ie 8)]><td align="left" valign="top" width="184"><![endif]-->
+                    <div
+                      style="display:inline-block; max-width:184px; vertical-align:top; width:100%;"
+                      class="mobile-full">
+
+                      <table class="vb-content" width="184" style="width: 100%"
+                        border="0" cellpadding="0" cellspacing="9" align="left">
+                        <tr>
+                          <td valign="top">
+                            <a data-ko-link="leftImage.url" href=""
+                              style="text-decoration: none;"><img
+                                data-ko-editable="leftImage.src" hspace="0"
+                                align="left" border="0" vspace="0" width="142"
+                                height="160"
+                                src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                                class="mobile-full" alt=""
+                                style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                            font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                            -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @leftImage.alt;" /></a>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td>
+      <td align="left" valign="top" width="184">
+      <![endif]-->
+                    <div
+                      style="display:inline-block; max-width:184px; vertical-align:top; width:100%;"
+                      class="mobile-full">
+
+                      <table class="vb-content" width="184" style="width: 100%"
+                        border="0" cellpadding="0" cellspacing="9" align="left">
+                        <tr>
+                          <td valign="top">
+                            <a data-ko-link="middleLeftImage.url" href=""
+                              style="text-decoration: none"><img
+                                data-ko-editable="middleLeftImage.src"
+                                hspace="0" align="center" border="0" vspace="0"
+                                width="142" height="160"
+                                src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                                class="mobile-full" alt=""
+                                style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                            font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                            -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @middleLeftImage.alt;" /></a>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td>
+      <td align="left" valign="top" width="184">
+      <![endif]-->
+                    <div
+                      style="display:inline-block; max-width:184px; vertical-align:top; width:100%;"
+                      class="mobile-full">
+
+                      <table class="vb-content" width="184" style="width: 100%"
+                        border="0" cellpadding="0" cellspacing="9"
+                        align="right">
+                        <tr>
+                          <td valign="top">
+                            <a data-ko-link="middleRightImage.url" href=""
+                              style="text-decoration: none"><img
+                                data-ko-editable="middleRightImage.src"
+                                hspace="0" align="center" border="0" vspace="0"
+                                width="142" height="160"
+                                src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                                class="mobile-full" alt=""
+                                style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                            font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                            -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @middleRightImage.alt;" /></a>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td><![endif]-->
+                    <!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]-->
+                    <div
+                      style="display:inline-block; max-width:184px; vertical-align:top; width:100%;"
+                      class="mobile-full">
+
+                      <table class="vb-content" width="184" style="width: 100%"
+                        border="0" cellpadding="0" cellspacing="9"
+                        align="right">
+                        <tr>
+                          <td valign="top">
+                            <a data-ko-link="rightImage.url" href=""
+                              style="text-decoration: none"><img
+                                data-ko-editable="rightImage.src" hspace="0"
+                                align="right" border="0" vspace="0" width="142"
+                                height="160"
+                                src="https://mosaico.io/srv/f-default/img?method=placeholder&amp;params=142%2C160"
+                                class="mobile-full" alt=""
+                                style="display: block; border-radius: 0px; width: 100%; height: auto;font-size: 13px;
+                                                font-family: Arial, Helvetica, sans-serif; color: #3f3f3f; -ko-font-size: @[longTextStyle.size]px; -ko-font-family: @longTextStyle.face;
+                                                -ko-color: @longTextStyle.color; -ko-attr-height: @imageHeight; -ko-attr-alt: @rightImage.alt;" /></a>
+                          </td>
+                        </tr>
+                      </table>
+
+                    </div>
+                    <!--[if (gte mso 9)|(lte ie 8)]></td><![endif]-->
+                    <!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!--[if (gte mso 9)|(lte ie 8)]></td></tr></table><![endif]-->
+          </td>
+        </tr>
+      </table>
+      <!-- /fourImageBlock -->
+
       <!-- spacerBlock -->
       <table class="vb-outer" width="100%" cellpadding="0" border="0"
         cellspacing="0" bgcolor="#bfbfbf"
@@ -2715,6 +2963,15 @@
                               <img src="img/social_def/youtube_ok.png"
                                 alt="Youtube" border="0" class="socialIcon" />
                             </a>
+                            <span data-ko-display="soundVisible"
+                              data-ko-wrap="false"
+                              style="display: none">&nbsp;</span>
+                            <a data-ko-display="soundVisible" href=""
+                              style="-ko-attr-href: @soundUrl; display: none">
+                              <img src="img/social_def/soundcloud_ok.png"
+                                alt="Soundcloud" border="0"
+                                class="socialIcon" />
+                            </a>
                           </td>
                           <td align="right" valign="middle"
                             class="links-color socialLinks mobile-textcenter"
@@ -2789,10 +3046,41 @@
                               <img src="img/social_def/youtube_bw_ok.png"
                                 alt="Youtube" border="0" class="socialIcon" />
                             </a>
+                            <span data-ko-display="soundVisible"
+                              data-ko-wrap="false"
+                              style="display: none">&nbsp;</span>
+                            <a data-ko-display="soundVisible" href=""
+                              style="-ko-attr-href: @soundUrl; display: none">
+                              <img src="img/social_def/soundcloud_bw_ok.png"
+                                alt="Soundcloud" border="0"
+                                class="socialIcon" />
+                            </a>
+                          </td>
+                        </tr>
+                        <tr data-ko-display="buttonVisible">
+                          <td valign="top">
+                            <table cellpadding="0" border="0" align="right"
+                              cellspacing="0" class="mobile-full"
+                              style="padding-top: 4px">
+                              <tr>
+                                <td width="auto" valign="middle"
+                                  bgcolor="#bfbfbf" align="center" height="26"
+                                  style="font-size: 13px; font-family: Arial, Helvetica, sans-serif; text-align:center; color: #3f3f3f; font-weight: normal;
+                                padding-left: 18px; padding-right: 18px; background-color: #bfbfbf; border-radius: 4px; border-style: solid; border-width: 1px; border-color: #bfbfbf;;
+                                -ko-border-radius: @[buttonStyle.radius]px; -ko-border-style: @[buttonStyle.borderStyle];
+                                -ko-border-width: @[buttonStyle.borderWidth]px; -ko-border-color: @buttonStyle.borderColor;
+                                -ko-attr-bgcolor: @buttonStyle.buttonColor; -ko-background-color: @buttonStyle.buttonColor;
+                                -ko-font-size: @[buttonStyle.size]px; -ko-font-family: @buttonStyle.face; -ko-color: @buttonStyle.color;">
+                                  <a data-ko-editable="rightButtonLink.text"
+                                    href=""
+                                    style="text-decoration: none; color: #3f3f3f; font-weight: normal;
+                                  -ko-color: @buttonStyle.color; -ko-attr-href: @rightButtonLink.url">BUTTON</a>
+                                </td>
+                              </tr>
+                            </table>
                           </td>
                         </tr>
                       </table>
-
                     </div>
                     <!--[if (gte mso 9)|(lte ie 8)]></td><![endif]-->
                     <!--[if (gte mso 9)|(lte ie 8)]></tr></table><![endif]-->

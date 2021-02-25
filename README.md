@@ -22,4 +22,7 @@ The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
 #### Features:
 * Tool that allows you to adjust button borders, colour, size or type.
-* New triple article block centred with images.
+* Added triple article block centred with images.
+* Added Soundcloud icon in social Block
+* Added Button in social block
+* Added block width four images
