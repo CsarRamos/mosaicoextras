@@ -171,57 +171,41 @@ function mosaicoextras_civicrm_themes(&$themes) {
 //}
 
 /**
- * Implements hook_civicrm_buildForm().
+ * Implements hook_civicrm_mosaicoConfig().
  *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_buildForm/
- *
- * @param string $formName
- * @param CRM_Core_Form $form
- * @return void
- */
-function mosaicoextras_civicrm_buildForm($formName, &$form) {
-  if ($formName == 'CRM_Mosaico_Form_MosaicoAdmin') {
-    CRM_Core_Resources::singleton()->addVars('mosaico', [
-      'plugins' => Civi::settings()->get('mosaico_extras_plugins'),
-      'toolbar' => Civi::settings()->get('mosaico_extras_toolbar'),
-    ]);
-
-    CRM_Core_Region::instance('page-body')->add([
-      'template' => __DIR__ . '/templates/CRM/Mosaicoextras/Settings.tpl',
-    ]);
-  }
-}
-
-/**
- * implements hook_civicrm_postProcess().
- *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postProcess/
- *
- * @param string $formName
- * @param CRM_Core_Form $form
- * @return void
- */
-function mosaicoextras_civicrm_postProcess($formName, &$form) {
-  if ($formName == 'CRM_Mosaico_Form_MosaicoAdmin') {
-    Civi::settings()->set('mosaico_extras_plugins', $_POST['mosaico_extras_plugins']);
-    Civi::settings()->set('mosaico_extras_toolbar', $_POST['mosaico_extras_toolbar']);
-  }
-}
-
-/**
- * implements hook_civicrm_mosaicoConfig().
- *
- * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_postProcess/
- *
- * @param object $config
- * @return void
+ * @link https://docs.civicrm.org/mosaico/en/latest/api/#hook_civicrm_mosaicoconfig
  */
 function mosaicoextras_civicrm_mosaicoConfig(&$config) {
   $res = CRM_Core_Resources::singleton();
 
-  $config['tinymceConfigFull']['plugins'] = [Civi::settings()->get('mosaico_extras_plugins')];
-  $config['tinymceConfigFull']['toolbar1'] = Civi::settings()->get('mosaico_extras_toolbar');
+  $config['tinymceConfigFull']['plugins'] = [Civi::settings()->get('mosaico_plugins')];
+  $config['tinymceConfigFull']['toolbar1'] = Civi::settings()->get('mosaico_toolbar');
 
   // Add mailto plugin
   $config['tinymceConfig']['external_plugins']['mailto'] = $res->getUrl('mosaicoextras', 'js/tinymce-plugins/mailto/plugin.min.js', 1);
+}
+
+/**
+ * Implements hook_civicrm_permission().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_permission/
+ */
+function mosaicoextras_civicrm_permission(&$permissions) {
+  $permissions['delete Mosaico templates'] = [
+    E::ts('MosaicoExtras: delete Mosaico templates'),
+    E::ts('Grants the necessary API permissions to delete mosaico templates without Administer CiviCRM'),
+  ];
+}
+
+/**
+ * Implements hook_civicrm_alterAPIPermissions().
+ *
+ * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_alterAPIPermissions/
+ */
+function mosaicoextras_civicrm_alterAPIPermissions($entity, $action, &$params, &$permissions) {
+  if ($entity == 'mosaico_template' and $action == 'delete') {
+    if (CRM_Core_Permission::check('delete Mosaico templates')) {
+      $params['check_permissions'] = FALSE;
+    }
+  }
 }
