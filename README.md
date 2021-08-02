@@ -1,25 +1,11 @@
-# Mosaico Extras
+Hello,
 
-This extension includes new features for Mosaico
+We have moved the project space for Mosaico Extras extension to CiviCRM's Gitlab. This includes both the issue tracking and support, and merge requests.
 
-The extension is licensed under [AGPL-3.0](LICENSE.txt).
+The new URL is: https://civicrm.org/extensions/mosaico-extras
 
-## Requirements
+To report a issue you can use the following link: https://lab.civicrm.org/extensions/mosaicoextras/issues
 
-* PHP v7.0+
-* CiviCRM v5+
-* [Mosaico CiviCRM Integration](https://civicrm.org/extensions/email-template-builder)
+If you do not already have an account on CiviCRM's Gitlab, you can create an account by registering on https://civicrm.org/user
 
-## Mosaico toolbar configuration
-
-* This extension integrates the [Toolbar Configurator for Mosaico](https://github.com/ginkgostreet/com.ginkgostreet.mosaicotoolbarconfig) in CiviCRM.
-
-* GUI Toolbar Configurator for Mosaico in CiviCRM. This tool allows an admin user to edit the settings of the tinymceConfigFull i.e. Mosaico Full Toolbar configuration by entering a list of plugins and buttons into text fields on the Mosaico settings screen. This extension does not allow changes to be made to the tinymceConfig configuration, which is the standard/base configuration used for headings, etc.
-
-## Mosaico toolbar plugin
-
-* Added new tool called "mailto" in mosaico toolbar to create mailto with cc, content and body. (Disabled in toolbar by default)
-
-## Mosaico delete template permission
-
-* Grants the necessary API permissions to delete mosaico templates without "CiviCRM: administer CiviCRM" permission
+Thank you!
